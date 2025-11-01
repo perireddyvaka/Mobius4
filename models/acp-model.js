@@ -2,7 +2,7 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../db/sequelize');
 
 const ACP = sequelize.define('acp', {
-  ri: { type: DataTypes.STRING(24), primaryKey: true },
+  ri: { type: DataTypes.STRING(64), primaryKey: true },
   ty: { type: DataTypes.INTEGER, allowNull: false },
   sid: { type: DataTypes.STRING },
   int_cr: { type: DataTypes.STRING },

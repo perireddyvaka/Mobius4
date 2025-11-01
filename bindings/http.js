@@ -81,6 +81,16 @@ app.post('/*', async (req, resp) => {
   
   console.log("\nresponse primitive: \n", JSON.stringify(resp_prim, null, 2));
 
+  // Handle undefined response primitive
+  if (!resp_prim) {
+    console.error("[HTTP ERROR] Response primitive is undefined, creating error response");
+    resp_prim = {
+      rqi: req_prim.rqi || "unknown",
+      rsc: "5000", // Internal Server Error
+      rvi: "3",
+      pc: { "m2m:dbg": "Internal server error - undefined response primitive" }
+    };
+  }
 
   // convert the response primitive into HTTP response to send back
   primToHttp(resp_prim, resp);
@@ -413,7 +423,9 @@ function httpToPrim(http_req) {
     // Content-Type for CREATE request: e.g. "application/json; ty=3"
     if (http_req.headers["content-type"].split(";")[1] == null) {
       if (http_req.method === "GET") {
-        prim.op = 2; // DELETE
+        prim.op = 2; // RETRIEVE
+      } else if (http_req.method === "POST") {
+        prim.op = 1; // CREATE (POST with body should be CREATE)
       } else if (http_req.method === "PUT") {
         prim.op = 3; // UPDATE
       } else if (http_req.method === "DELETE") {
@@ -539,9 +551,16 @@ function httpToPrim(http_req) {
 
 // convert response primitive into HTTP response
 function primToHttp(prim, resp) {
-  resp.set("X-M2M-RI", prim.rqi);
-  resp.set("X-M2M-RSC", prim.rsc);
-  resp.set("X-M2M-RVI", prim.rvi);
+  // Safety check for undefined primitive
+  if (!prim) {
+    console.error("[HTTP ERROR] Response primitive is undefined");
+    resp.set("X-M2M-RSC", "5000"); // Internal Server Error
+    return;
+  }
+  
+  resp.set("X-M2M-RI", prim.rqi || "unknown");
+  resp.set("X-M2M-RSC", prim.rsc || "5000");
+  resp.set("X-M2M-RVI", prim.rvi || "3");
   
   // Set primitive content (pc) as HTTP response payload if it exists
   if (prim.pc) {

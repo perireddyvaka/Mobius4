@@ -72,16 +72,16 @@
     "port": 1883
   },
   "db": {
-    "user": "sm",
+    "user": "root",
     "host": "localhost",
     "name": "mobius4",
-    "pw": "keti1234",
-    "port": 5432
+    "pw": "toor",
+    "port": 5434
   },
   "length": {
     "timestamp": 20,
     "entity_id": 255,
-    "ri": 10,
+    "ri": 64,
     "pi": 255,
     "rn_random": 10,
     "rn": 20,

@@ -1,4 +1,3 @@
-const { customAlphabet } = require('nanoid');
 const moment = require('moment');
 const config = require('config');
 
@@ -6,7 +5,36 @@ const timestamp_format = config.get('cse.timestamp_format');
 const enums = require('../config/enums');
 const pool = require('../db/connection');
 
-const generate_ri = customAlphabet(config.cse.allowed_ri_characters, config.length.ri);
+let nanoidGenerator = null;
+let isNanoidLoaded = false;
+
+// Initialize nanoid asynchronously
+const initNanoid = async () => {
+  if (!isNanoidLoaded) {
+    try {
+      const { customAlphabet } = await import('nanoid');
+      nanoidGenerator = customAlphabet(config.cse.allowed_ri_characters, config.length.ri);
+      isNanoidLoaded = true;
+    } catch (error) {
+      console.error('Failed to load nanoid, using fallback ID generator:', error);
+      isNanoidLoaded = true; // Mark as loaded to avoid retrying
+    }
+  }
+};
+
+// Start initialization immediately
+initNanoid();
+
+// Generate timestamp-based resource identifier (compatible with previous version)
+const generate_ri = () => {
+  // Generate timestamp-based ID similar to previous version: "3-20251028114420563635"
+  const now = moment().utc();
+  const timestamp = now.format('YYYYMMDDHHmmss');
+  const microseconds = now.format('SSS') + Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+  
+  // Format: "3-{timestamp}{microseconds}"
+  return `3-${timestamp}${microseconds}`;
+};
 
 function get_cur_time () {
   return moment().utc().format(timestamp_format);

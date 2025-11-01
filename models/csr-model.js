@@ -2,7 +2,7 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../db/sequelize');
 
 const CSR = sequelize.define('csr', {
-  ri: { type: DataTypes.STRING(24), primaryKey: true, allowNull: false },
+  ri: { type: DataTypes.STRING(64), primaryKey: true, allowNull: false },
   acpi: DataTypes.ARRAY(DataTypes.STRING),
   cb: DataTypes.STRING,
   cr: DataTypes.STRING,

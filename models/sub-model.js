@@ -2,7 +2,7 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../db/sequelize');
 
 const SUB = sequelize.define('sub', {
-  ri: { type: DataTypes.STRING(24), primaryKey: true },
+  ri: { type: DataTypes.STRING(64), primaryKey: true },
   ty: { type: DataTypes.INTEGER, allowNull: false, defaultValue: 23 },
   sid: { type: DataTypes.STRING },
   int_cr: { type: DataTypes.STRING },

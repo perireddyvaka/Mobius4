@@ -1277,7 +1277,13 @@ async function access_decision(req_prim, resp_prim) {
 			`comparing internally kept creator (${int_cr}) and originator (${req_prim.fr})`
 		);
 
-		if (req_prim.fr == int_cr) {
+		// Allow admin access for configured admin and SOrigin
+		if (req_prim.fr === config.cse.admin || req_prim.fr === 'SOrigin') {
+			access_grant = true;
+			console.log(`Admin access granted for originator: ${req_prim.fr}`);
+		}
+		// Allow exact match or hierarchical access (originator starts with creator)
+		else if (req_prim.fr == int_cr || req_prim.fr.startsWith(int_cr + '/')) {
 			access_grant = true;
 		}
 	}

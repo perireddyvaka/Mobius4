@@ -9,11 +9,33 @@ const AE = require('../models/ae-model');
 // eventTYpe = ['create', 'update']
 async function check_and_send_noti(req_prim, resp_prim, event_type) {
     // get subscribed-to resource info
-    const sub_res_pi = req_prim.ri;
+    // For create events, we need to check subscriptions under the parent resource
+    // For update events, we check subscriptions under the resource itself
+    let sub_res_pi;
+    
+    if (event_type === "create") {
+        // For create events, get parent ID from the created resource or from request
+        const created_resource = resp_prim.pc ? Object.values(resp_prim.pc)[0] : null;
+        sub_res_pi = req_prim.pi || (created_resource ? created_resource.pi : null);
+    } else {
+        sub_res_pi = req_prim.ri;
+    }
+
+    console.log(`\n[NOTIFICATION DEBUG] Event: ${event_type}`);
+    console.log(`[NOTIFICATION DEBUG] Looking for subscriptions under PI: ${sub_res_pi}`);
+    console.log(`[NOTIFICATION DEBUG] Resource RI: ${req_prim.ri}, PI: ${req_prim.pi}`);
+
+    // Skip if we can't determine the parent resource for create events
+    if (event_type === "create" && !sub_res_pi) {
+        console.log(`[NOTIFICATION DEBUG] Skipping notification - no parent identifier found`);
+        return;
+    }
 
     // get <sub> child resources
     const sub_res = (await SUB.findAll({ where: { pi: sub_res_pi } }))
         .map(sub => sub.toJSON());
+
+    console.log(`[NOTIFICATION DEBUG] Found ${sub_res.length} subscriptions`);
 
     if (sub_res.length === 0) {
         return;
@@ -23,15 +45,23 @@ async function check_and_send_noti(req_prim, resp_prim, event_type) {
             // by spec, when 'enc' is null, default criteria is 'updated attributes'
             if (!sub_res.enc) sub_res.enc = { net: [1] };
 
+            console.log(`[NOTIFICATION DEBUG] Processing subscription ${sub_res.ri}`);
+            console.log(`[NOTIFICATION DEBUG] Subscription ENC:`, JSON.stringify(sub_res.enc));
+            console.log(`[NOTIFICATION DEBUG] Event type: ${event_type}`);
+            console.log(`[NOTIFICATION DEBUG] Net includes 3?`, sub_res.enc.net.includes(3));
+
             if (sub_res.enc.net.includes(3) == true && "create" == event_type) {
                 // net 3: create
                 let this_ty = req_prim.ty;
+                console.log(`[NOTIFICATION DEBUG] Subscription ${sub_res.ri} matches create event for type ${this_ty}`);
                 // console.log('\nsub_res for the creation target: ', sub_res);
                 if (sub_res.enc.chty) {
                     if (sub_res.enc.chty.includes(this_ty)) {
+                        console.log(`[NOTIFICATION DEBUG] Sending notification for specific type match`);
                         send_a_noti(sub_res, resp_prim.pc, 3);
                     }
                 } else {
+                    console.log(`[NOTIFICATION DEBUG] Sending notification for all types`);
                     send_a_noti(sub_res, resp_prim.pc, 3);
                 }
             } else if (sub_res.enc.net.includes(1) == true && "update" == event_type) {
@@ -97,6 +127,9 @@ async function send_a_noti(sub_res, event_obj, notificationEventType) {
 }
 async function http_noti(noti_target, sgn) {
     const { generate_ri } = require('./utils');
+
+    console.log(`[NOTIFICATION DEBUG] Sending HTTP notification to: ${noti_target}`);
+    console.log(`[NOTIFICATION DEBUG] Notification data:`, JSON.stringify(sgn, null, 2));
 
     // axios handles HTTP and HTTPs automatically
     axios

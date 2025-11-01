@@ -3,7 +3,7 @@ const sequelize = require('../db/sequelize');
 
 const DPM = sequelize.define('dpm', {
   ri: {
-    type: DataTypes.STRING(24),
+    type: DataTypes.STRING(64),
     primaryKey: true,
     allowNull: false,
   },

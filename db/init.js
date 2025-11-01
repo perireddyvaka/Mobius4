@@ -58,7 +58,32 @@ exports.init_db = async function () {
                     console.log('default <acp> resource creation failed');
                 }
             } else {
-                console.log('\n<cb> resource already exists with ri:', cbResult.rows[0].ri);
+                const cb_ri = cbResult.rows[0].ri;
+                console.log('\n<cb> resource already exists with ri:', cb_ri);
+                
+                // check if lookup entry exists for CB resource
+                const lookupResult = await client.query('SELECT ri FROM lookup WHERE ri = $1 AND sid = $2', [cb_ri, config.cse.csebase_rn]);
+                
+                if (lookupResult.rows.length === 0) {
+                    console.log('Lookup entry missing for CB resource, creating it...');
+                    
+                    // get CB resource details
+                    const cbDetails = await client.query('SELECT * FROM cb WHERE ri = $1', [cb_ri]);
+                    const cb_data = cbDetails.rows[0];
+                    
+                    // insert missing lookup entry
+                    await client.query(`
+                        INSERT INTO lookup (ri, ty, rn, sid, lvl, pi, cr, int_cr, et)
+                        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+                    `, [
+                        cb_data.ri, cb_data.ty, cb_data.rn, cb_data.sid, 0,
+                        null, config.cse.admin, config.cse.admin, cb_data.ct
+                    ]);
+                    
+                    console.log('Lookup entry created for CB resource');
+                } else {
+                    console.log('Lookup entry for CB resource exists');
+                }
             }
         } finally {
             client.release();

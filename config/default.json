@@ -74,7 +74,7 @@
   "db": {
     "user": "root",
     "host": "localhost",
-    "name": "mobius4",
+    "name": "mobiusdb",
     "pw": "toor",
     "port": 5434
   },

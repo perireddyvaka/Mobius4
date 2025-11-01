@@ -1,0 +1,1803 @@
+HTTP server is listening on port: 7599
+HTTPs server is listening on port: 7580
+MQTT client is connecting to:  tcp://localhost:1883
+(node:2499944) [DEP0044] DeprecationWarning: The `util.isArray` API is deprecated. Please use `Array.isArray()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:2499944) [DEP0055] DeprecationWarning: The `util.isRegExp` API is deprecated. Please use `arg instanceof RegExp` instead.
+(node:2499944) [DEP0047] DeprecationWarning: The `util.isDate` API is deprecated.  Please use `arg instanceof Date` instead.
+Successfully connected to PostgreSQL
+resource tables created successfully
+
+<cb> resource already exists with ri: 3-20251101093444809374
+Lookup entry for CB resource exists
+
+request primitive: 
+ {
+  "fc": {},
+  "to": "Mobius/AE-WM/WM01-0032-0001/Data/test-sub-notification",
+  "fr": "SM",
+  "rqi": "delete-old-sub",
+  "op": 1,
+  "ty": 23,
+  "pc": {}
+}
+
+request primitive: 
+ {
+  "fc": {},
+  "to": "Mobius/AE-WM/WM01-0032-0001/Data",
+  "fr": "SM",
+  "rqi": "test-sub-notify",
+  "op": 1,
+  "ty": 23,
+  "pc": {
+    "m2m:sub": {
+      "rn": "test-sub-notification",
+      "nu": [
+        "http://localhost:8888/notify"
+      ],
+      "nct": 1,
+      "enc": {
+        "net": [
+          "3"
+        ]
+      }
+    }
+  }
+}
+access granted as the system admin
+
+
+[NOTIFICATION DEBUG] Event: create
+[NOTIFICATION DEBUG] Looking for subscriptions under PI: 3-20251101115308509001
+[NOTIFICATION DEBUG] Resource RI: 3-20251101115308509001, PI: undefined
+
+response primitive: 
+ {
+  "rqi": "test-sub-notify",
+  "rvi": "4",
+  "pc": {
+    "m2m:sub": {
+      "ty": 23,
+      "et": "20261101T131448",
+      "ct": "20251101T131448",
+      "lt": "20251101T131448",
+      "ri": "3-20251101131448799904",
+      "rn": "test-sub-notification",
+      "pi": "3-20251101115308509001",
+      "enc": {
+        "net": [
+          "3"
+        ]
+      },
+      "nu": [
+        "http://localhost:8888/notify"
+      ],
+      "nct": 1
+    }
+  },
+  "rsc": 2001
+}
+[NOTIFICATION DEBUG] Found 3 subscriptions
+[NOTIFICATION DEBUG] Processing subscription 3-20251101115308615565
+[NOTIFICATION DEBUG] Subscription ENC: {"net":["3"]}
+[NOTIFICATION DEBUG] Event type: create
+[NOTIFICATION DEBUG] Net array (converted): [ 3 ]
+[NOTIFICATION DEBUG] Net includes 3? true
+[NOTIFICATION DEBUG] Subscription 3-20251101115308615565 matches create event for type 23
+[NOTIFICATION DEBUG] Sending notification for all types
+[NOTIFICATION DEBUG] Sending HTTP notification to: http://10.2.16.116:8610/notify/listener
+[NOTIFICATION DEBUG] Notification data: {
+  "m2m:sgn": {
+    "nev": {
+      "rep": {
+        "m2m:sub": {
+          "ty": 23,
+          "et": "20261101T131448",
+          "ct": "20251101T131448",
+          "lt": "20251101T131448",
+          "ri": "3-20251101131448799904",
+          "rn": "test-sub-notification",
+          "pi": "3-20251101115308509001",
+          "enc": {
+            "net": [
+              "3"
+            ]
+          },
+          "nu": [
+            "http://localhost:8888/notify"
+          ],
+          "nct": 1
+        }
+      },
+      "sur": "Mobius/AE-WM/WM01-0032-0001/Data/sub-1-0",
+      "net": 3
+    }
+  }
+}
+[NOTIFICATION DEBUG] Processing subscription 3-20251101124327369859
+[NOTIFICATION DEBUG] Subscription ENC: {"net":["3"]}
+[NOTIFICATION DEBUG] Event type: create
+[NOTIFICATION DEBUG] Net array (converted): [ 3 ]
+[NOTIFICATION DEBUG] Net includes 3? true
+[NOTIFICATION DEBUG] Subscription 3-20251101124327369859 matches create event for type 23
+[NOTIFICATION DEBUG] Sending notification for all types
+[NOTIFICATION DEBUG] Sending HTTP notification to: http://10.2.16.116:8000/notify/listener
+[NOTIFICATION DEBUG] Notification data: {
+  "m2m:sgn": {
+    "nev": {
+      "rep": {
+        "m2m:sub": {
+          "ty": 23,
+          "et": "20261101T131448",
+          "ct": "20251101T131448",
+          "lt": "20251101T131448",
+          "ri": "3-20251101131448799904",
+          "rn": "test-sub-notification",
+          "pi": "3-20251101115308509001",
+          "enc": {
+            "net": [
+              "3"
+            ]
+          },
+          "nu": [
+            "http://localhost:8888/notify"
+          ],
+          "nct": 1
+        }
+      },
+      "sur": "Mobius/AE-WM/WM01-0032-0001/Data/sub-1-1",
+      "net": 3
+    }
+  }
+}
+[NOTIFICATION DEBUG] Processing subscription 3-20251101131448799904
+[NOTIFICATION DEBUG] Subscription ENC: {"net":["3"]}
+[NOTIFICATION DEBUG] Event type: create
+[NOTIFICATION DEBUG] Net array (converted): [ 3 ]
+[NOTIFICATION DEBUG] Net includes 3? true
+[NOTIFICATION DEBUG] Subscription 3-20251101131448799904 matches create event for type 23
+[NOTIFICATION DEBUG] Sending notification for all types
+[NOTIFICATION DEBUG] Sending HTTP notification to: http://localhost:8888/notify
+[NOTIFICATION DEBUG] Notification data: {
+  "m2m:sgn": {
+    "nev": {
+      "rep": {
+        "m2m:sub": {
+          "ty": 23,
+          "et": "20261101T131448",
+          "ct": "20251101T131448",
+          "lt": "20251101T131448",
+          "ri": "3-20251101131448799904",
+          "rn": "test-sub-notification",
+          "pi": "3-20251101115308509001",
+          "enc": {
+            "net": [
+              "3"
+            ]
+          },
+          "nu": [
+            "http://localhost:8888/notify"
+          ],
+          "nct": 1
+        }
+      },
+      "sur": "Mobius/AE-WM/WM01-0032-0001/Data/test-sub-notification",
+      "net": 3
+    }
+  }
+}
+
+received message from notification target:
+{
+  "status": "error",
+  "message": "Invalid notification structure: 'm2m:cin'"
+}
+
+received message from notification target:
+{
+  "status": "ok"
+}
+
+received message from notification target:
+{
+  "status": "error",
+  "message": "Invalid notification structure: 'm2m:cin'"
+}
+
+request primitive: 
+ {
+  "fc": {},
+  "to": "Mobius/AE-WM/WM01-0032-0001/Data",
+  "fr": "SM",
+  "rqi": "test-cin-create",
+  "op": 1,
+  "ty": 4,
+  "pc": {
+    "m2m:cin": {
+      "con": "['50', 'test-notification', 'TEST-001', 'location-test', 'violation-test']",
+      "lbl": [
+        "polluters_count",
+        "bindata",
+        "vehicle_number",
+        "lct",
+        "violations"
+      ]
+    }
+  }
+}
+access granted as the system admin
+
+
+[NOTIFICATION DEBUG] Event: create
+[NOTIFICATION DEBUG] Looking for subscriptions under PI: 3-20251101115308509001
+[NOTIFICATION DEBUG] Resource RI: 3-20251101115308509001, PI: undefined
+
+response primitive: 
+ {
+  "rqi": "test-cin-create",
+  "rvi": "4",
+  "pc": {
+    "m2m:cin": {
+      "ty": 4,
+      "et": "20261101T131450",
+      "ct": "20251101T131450",
+      "lt": "20251101T131450",
+      "ri": "3-20251101131450829981",
+      "rn": "cin-wWcvefCUKK",
+      "pi": "3-20251101115308509001",
+      "st": 6,
+      "lbl": [
+        "polluters_count",
+        "bindata",
+        "vehicle_number",
+        "lct",
+        "violations"
+      ],
+      "cs": 148,
+      "con": "['50', 'test-notification', 'TEST-001', 'location-test', 'violation-test']"
+    }
+  },
+  "rsc": 2001
+}
+[NOTIFICATION DEBUG] Found 3 subscriptions
+[NOTIFICATION DEBUG] Processing subscription 3-20251101115308615565
+[NOTIFICATION DEBUG] Subscription ENC: {"net":["3"]}
+[NOTIFICATION DEBUG] Event type: create
+[NOTIFICATION DEBUG] Net array (converted): [ 3 ]
+[NOTIFICATION DEBUG] Net includes 3? true
+[NOTIFICATION DEBUG] Subscription 3-20251101115308615565 matches create event for type 4
+[NOTIFICATION DEBUG] Sending notification for all types
+[NOTIFICATION DEBUG] Sending HTTP notification to: http://10.2.16.116:8610/notify/listener
+[NOTIFICATION DEBUG] Notification data: {
+  "m2m:sgn": {
+    "nev": {
+      "rep": {
+        "m2m:cin": {
+          "ty": 4,
+          "et": "20261101T131450",
+          "ct": "20251101T131450",
+          "lt": "20251101T131450",
+          "ri": "3-20251101131450829981",
+          "rn": "cin-wWcvefCUKK",
+          "pi": "3-20251101115308509001",
+          "st": 6,
+          "lbl": [
+            "polluters_count",
+            "bindata",
+            "vehicle_number",
+            "lct",
+            "violations"
+          ],
+          "cs": 148,
+          "con": "['50', 'test-notification', 'TEST-001', 'location-test', 'violation-test']"
+        }
+      },
+      "sur": "Mobius/AE-WM/WM01-0032-0001/Data/sub-1-0",
+      "net": 3
+    }
+  }
+}
+[NOTIFICATION DEBUG] Processing subscription 3-20251101124327369859
+[NOTIFICATION DEBUG] Subscription ENC: {"net":["3"]}
+[NOTIFICATION DEBUG] Event type: create
+[NOTIFICATION DEBUG] Net array (converted): [ 3 ]
+[NOTIFICATION DEBUG] Net includes 3? true
+[NOTIFICATION DEBUG] Subscription 3-20251101124327369859 matches create event for type 4
+[NOTIFICATION DEBUG] Sending notification for all types
+[NOTIFICATION DEBUG] Sending HTTP notification to: http://10.2.16.116:8000/notify/listener
+[NOTIFICATION DEBUG] Notification data: {
+  "m2m:sgn": {
+    "nev": {
+      "rep": {
+        "m2m:cin": {
+          "ty": 4,
+          "et": "20261101T131450",
+          "ct": "20251101T131450",
+          "lt": "20251101T131450",
+          "ri": "3-20251101131450829981",
+          "rn": "cin-wWcvefCUKK",
+          "pi": "3-20251101115308509001",
+          "st": 6,
+          "lbl": [
+            "polluters_count",
+            "bindata",
+            "vehicle_number",
+            "lct",
+            "violations"
+          ],
+          "cs": 148,
+          "con": "['50', 'test-notification', 'TEST-001', 'location-test', 'violation-test']"
+        }
+      },
+      "sur": "Mobius/AE-WM/WM01-0032-0001/Data/sub-1-1",
+      "net": 3
+    }
+  }
+}
+[NOTIFICATION DEBUG] Processing subscription 3-20251101131448799904
+[NOTIFICATION DEBUG] Subscription ENC: {"net":["3"]}
+[NOTIFICATION DEBUG] Event type: create
+[NOTIFICATION DEBUG] Net array (converted): [ 3 ]
+[NOTIFICATION DEBUG] Net includes 3? true
+[NOTIFICATION DEBUG] Subscription 3-20251101131448799904 matches create event for type 4
+[NOTIFICATION DEBUG] Sending notification for all types
+[NOTIFICATION DEBUG] Sending HTTP notification to: http://localhost:8888/notify
+[NOTIFICATION DEBUG] Notification data: {
+  "m2m:sgn": {
+    "nev": {
+      "rep": {
+        "m2m:cin": {
+          "ty": 4,
+          "et": "20261101T131450",
+          "ct": "20251101T131450",
+          "lt": "20251101T131450",
+          "ri": "3-20251101131450829981",
+          "rn": "cin-wWcvefCUKK",
+          "pi": "3-20251101115308509001",
+          "st": 6,
+          "lbl": [
+            "polluters_count",
+            "bindata",
+            "vehicle_number",
+            "lct",
+            "violations"
+          ],
+          "cs": 148,
+          "con": "['50', 'test-notification', 'TEST-001', 'location-test', 'violation-test']"
+        }
+      },
+      "sur": "Mobius/AE-WM/WM01-0032-0001/Data/test-sub-notification",
+      "net": 3
+    }
+  }
+}
+
+received message from notification target:
+{
+  "status": "ok"
+}
+sur: Mobius/AE-WM/WM01-0032-0001/Data/sub-1-1, target unreachable: http://10.2.16.116:8000/notify/listener (status: 500)
+sur: Mobius/AE-WM/WM01-0032-0001/Data/sub-1-0, target unreachable: http://10.2.16.116:8610/notify/listener (status: 500)
+
+request primitive: 
+ {
+  "fc": {},
+  "to": "Mobius/AE-WM/WM01-0032-0001/Data/test-sub-notification",
+  "fr": "SM",
+  "rqi": "cleanup-sub",
+  "op": 1,
+  "ty": 23,
+  "pc": {}
+}
+access granted as the system admin
+
+Unhandled Rejection at: Promise {
+  <rejected> TypeError: Cannot read properties of undefined (reading 'et')
+      at Object.create_a_res (/home/likhith/ctOP/Mobius4/Mobius4/cse/hostingCSE.js:86:21)
+      at Object.prim_handling (/home/likhith/ctOP/Mobius4/Mobius4/cse/reqPrim.js:201:26)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async /home/likhith/ctOP/Mobius4/Mobius4/bindings/http.js:329:15
+} reason: TypeError: Cannot read properties of undefined (reading 'et')
+    at Object.create_a_res (/home/likhith/ctOP/Mobius4/Mobius4/cse/hostingCSE.js:86:21)
+    at Object.prim_handling (/home/likhith/ctOP/Mobius4/Mobius4/cse/reqPrim.js:201:26)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async /home/likhith/ctOP/Mobius4/Mobius4/bindings/http.js:329:15
+
+request primitive: 
+ {
+  "fc": {},
+  "to": "Mobius",
+  "op": 2,
+  "pc": {}
+}
+
+request primitive: 
+ {
+  "fc": {},
+  "to": "Mobius",
+  "op": 2,
+  "pc": {}
+}
+
+request primitive: 
+ {
+  "fc": {},
+  "to": "Mobius",
+  "op": 2,
+  "pc": {}
+}
+
+request primitive: 
+ {
+  "fc": {},
+  "to": "Mobius",
+  "op": 2,
+  "pc": {}
+}
+
+request primitive: 
+ {
+  "fc": {},
+  "to": "Mobius",
+  "op": 2,
+  "pc": {}
+}
+
+request primitive: 
+ {
+  "fc": {},
+  "to": "Mobius",
+  "op": 2,
+  "pc": {}
+}
+
+request primitive: 
+ {
+  "fc": {},
+  "to": "Mobius",
+  "op": 2,
+  "pc": {}
+}
+
+request primitive: 
+ {
+  "fc": {},
+  "to": "Mobius",
+  "op": 2,
+  "pc": {}
+}
+
+request primitive: 
+ {
+  "fc": {},
+  "to": "Mobius",
+  "op": 2,
+  "pc": {}
+}
+
+request primitive: 
+ {
+  "fc": {},
+  "to": "Mobius",
+  "op": 2,
+  "pc": {}
+}
+
+request primitive: 
+ {
+  "fc": {},
+  "to": "Mobius/AE-WM/WM01-0032-0001/Data",
+  "fr": "SOriginAE-WM",
+  "rqi": "12345",
+  "op": 1,
+  "ty": 4,
+  "rcn": 1,
+  "pc": {
+    "m2m:cin": {
+      "con": "['46', 'example', 'example', 'example', 'example']",
+      "lbl": [
+        "polluters_count",
+        "bindata",
+        "vehicle_number",
+        "lct",
+        "violations"
+      ]
+    }
+  }
+}
+comparing internally kept creator (SOriginAE-WM) and originator (SOriginAE-WM)
+
+[NOTIFICATION DEBUG] Event: create
+[NOTIFICATION DEBUG] Looking for subscriptions under PI: 3-20251101115308509001
+[NOTIFICATION DEBUG] Resource RI: 3-20251101115308509001, PI: undefined
+
+response primitive: 
+ {
+  "rqi": "12345",
+  "rvi": "4",
+  "pc": {
+    "m2m:cin": {
+      "ty": 4,
+      "et": "20261101T132132",
+      "ct": "20251101T132132",
+      "lt": "20251101T132132",
+      "ri": "3-20251101132132316961",
+      "rn": "cin-PIprQzwEhT",
+      "pi": "3-20251101115308509001",
+      "st": 7,
+      "lbl": [
+        "polluters_count",
+        "bindata",
+        "vehicle_number",
+        "lct",
+        "violations"
+      ],
+      "cs": 100,
+      "con": "['46', 'example', 'example', 'example', 'example']"
+    }
+  },
+  "rsc": 2001
+}
+[NOTIFICATION DEBUG] Found 3 subscriptions
+[NOTIFICATION DEBUG] Processing subscription 3-20251101115308615565
+[NOTIFICATION DEBUG] Subscription ENC: {"net":["3"]}
+[NOTIFICATION DEBUG] Event type: create
+[NOTIFICATION DEBUG] Net array (converted): [ 3 ]
+[NOTIFICATION DEBUG] Net includes 3? true
+[NOTIFICATION DEBUG] Subscription 3-20251101115308615565 matches create event for type 4
+[NOTIFICATION DEBUG] Sending notification for all types
+[NOTIFICATION DEBUG] Sending HTTP notification to: http://10.2.16.116:8610/notify/listener
+[NOTIFICATION DEBUG] Notification data: {
+  "m2m:sgn": {
+    "nev": {
+      "rep": {
+        "m2m:cin": {
+          "ty": 4,
+          "et": "20261101T132132",
+          "ct": "20251101T132132",
+          "lt": "20251101T132132",
+          "ri": "3-20251101132132316961",
+          "rn": "cin-PIprQzwEhT",
+          "pi": "3-20251101115308509001",
+          "st": 7,
+          "lbl": [
+            "polluters_count",
+            "bindata",
+            "vehicle_number",
+            "lct",
+            "violations"
+          ],
+          "cs": 100,
+          "con": "['46', 'example', 'example', 'example', 'example']"
+        }
+      },
+      "sur": "Mobius/AE-WM/WM01-0032-0001/Data/sub-1-0",
+      "net": 3
+    }
+  }
+}
+[NOTIFICATION DEBUG] Processing subscription 3-20251101124327369859
+[NOTIFICATION DEBUG] Subscription ENC: {"net":["3"]}
+[NOTIFICATION DEBUG] Event type: create
+[NOTIFICATION DEBUG] Net array (converted): [ 3 ]
+[NOTIFICATION DEBUG] Net includes 3? true
+[NOTIFICATION DEBUG] Subscription 3-20251101124327369859 matches create event for type 4
+[NOTIFICATION DEBUG] Sending notification for all types
+[NOTIFICATION DEBUG] Sending HTTP notification to: http://10.2.16.116:8000/notify/listener
+[NOTIFICATION DEBUG] Notification data: {
+  "m2m:sgn": {
+    "nev": {
+      "rep": {
+        "m2m:cin": {
+          "ty": 4,
+          "et": "20261101T132132",
+          "ct": "20251101T132132",
+          "lt": "20251101T132132",
+          "ri": "3-20251101132132316961",
+          "rn": "cin-PIprQzwEhT",
+          "pi": "3-20251101115308509001",
+          "st": 7,
+          "lbl": [
+            "polluters_count",
+            "bindata",
+            "vehicle_number",
+            "lct",
+            "violations"
+          ],
+          "cs": 100,
+          "con": "['46', 'example', 'example', 'example', 'example']"
+        }
+      },
+      "sur": "Mobius/AE-WM/WM01-0032-0001/Data/sub-1-1",
+      "net": 3
+    }
+  }
+}
+[NOTIFICATION DEBUG] Processing subscription 3-20251101131448799904
+[NOTIFICATION DEBUG] Subscription ENC: {"net":["3"]}
+[NOTIFICATION DEBUG] Event type: create
+[NOTIFICATION DEBUG] Net array (converted): [ 3 ]
+[NOTIFICATION DEBUG] Net includes 3? true
+[NOTIFICATION DEBUG] Subscription 3-20251101131448799904 matches create event for type 4
+[NOTIFICATION DEBUG] Sending notification for all types
+[NOTIFICATION DEBUG] Sending HTTP notification to: http://localhost:8888/notify
+[NOTIFICATION DEBUG] Notification data: {
+  "m2m:sgn": {
+    "nev": {
+      "rep": {
+        "m2m:cin": {
+          "ty": 4,
+          "et": "20261101T132132",
+          "ct": "20251101T132132",
+          "lt": "20251101T132132",
+          "ri": "3-20251101132132316961",
+          "rn": "cin-PIprQzwEhT",
+          "pi": "3-20251101115308509001",
+          "st": 7,
+          "lbl": [
+            "polluters_count",
+            "bindata",
+            "vehicle_number",
+            "lct",
+            "violations"
+          ],
+          "cs": 100,
+          "con": "['46', 'example', 'example', 'example', 'example']"
+        }
+      },
+      "sur": "Mobius/AE-WM/WM01-0032-0001/Data/test-sub-notification",
+      "net": 3
+    }
+  }
+}
+sur: Mobius/AE-WM/WM01-0032-0001/Data/test-sub-notification, target unreachable: http://localhost:8888/notify (no response)
+
+received message from notification target:
+{
+  "message": "Notification processed successfully"
+}
+sur: Mobius/AE-WM/WM01-0032-0001/Data/sub-1-0, target unreachable: http://10.2.16.116:8610/notify/listener (status: 500)
+
+request primitive: 
+ {
+  "fc": {},
+  "to": "Mobius/AE-WM/WM01-0032-0001/Data",
+  "fr": "SOriginAE-WM",
+  "rqi": "12345",
+  "op": 1,
+  "ty": 4,
+  "rcn": 1,
+  "pc": {
+    "m2m:cin": {
+      "con": "['46', 'example', 'example', 'example', 'example']",
+      "lbl": [
+        "polluters_count",
+        "bindata",
+        "vehicle_number",
+        "lct",
+        "violations"
+      ]
+    }
+  }
+}
+comparing internally kept creator (SOriginAE-WM) and originator (SOriginAE-WM)
+
+[NOTIFICATION DEBUG] Event: create
+[NOTIFICATION DEBUG] Looking for subscriptions under PI: 3-20251101115308509001
+[NOTIFICATION DEBUG] Resource RI: 3-20251101115308509001, PI: undefined
+
+response primitive: 
+ {
+  "rqi": "12345",
+  "rvi": "4",
+  "pc": {
+    "m2m:cin": {
+      "ty": 4,
+      "et": "20261101T132153",
+      "ct": "20251101T132153",
+      "lt": "20251101T132153",
+      "ri": "3-20251101132153531536",
+      "rn": "cin-LCKvfL9nZk",
+      "pi": "3-20251101115308509001",
+      "st": 8,
+      "lbl": [
+        "polluters_count",
+        "bindata",
+        "vehicle_number",
+        "lct",
+        "violations"
+      ],
+      "cs": 100,
+      "con": "['46', 'example', 'example', 'example', 'example']"
+    }
+  },
+  "rsc": 2001
+}
+[NOTIFICATION DEBUG] Found 3 subscriptions
+[NOTIFICATION DEBUG] Processing subscription 3-20251101115308615565
+[NOTIFICATION DEBUG] Subscription ENC: {"net":["3"]}
+[NOTIFICATION DEBUG] Event type: create
+[NOTIFICATION DEBUG] Net array (converted): [ 3 ]
+[NOTIFICATION DEBUG] Net includes 3? true
+[NOTIFICATION DEBUG] Subscription 3-20251101115308615565 matches create event for type 4
+[NOTIFICATION DEBUG] Sending notification for all types
+[NOTIFICATION DEBUG] Sending HTTP notification to: http://10.2.16.116:8610/notify/listener
+[NOTIFICATION DEBUG] Notification data: {
+  "m2m:sgn": {
+    "nev": {
+      "rep": {
+        "m2m:cin": {
+          "ty": 4,
+          "et": "20261101T132153",
+          "ct": "20251101T132153",
+          "lt": "20251101T132153",
+          "ri": "3-20251101132153531536",
+          "rn": "cin-LCKvfL9nZk",
+          "pi": "3-20251101115308509001",
+          "st": 8,
+          "lbl": [
+            "polluters_count",
+            "bindata",
+            "vehicle_number",
+            "lct",
+            "violations"
+          ],
+          "cs": 100,
+          "con": "['46', 'example', 'example', 'example', 'example']"
+        }
+      },
+      "sur": "Mobius/AE-WM/WM01-0032-0001/Data/sub-1-0",
+      "net": 3
+    }
+  }
+}
+[NOTIFICATION DEBUG] Processing subscription 3-20251101124327369859
+[NOTIFICATION DEBUG] Subscription ENC: {"net":["3"]}
+[NOTIFICATION DEBUG] Event type: create
+[NOTIFICATION DEBUG] Net array (converted): [ 3 ]
+[NOTIFICATION DEBUG] Net includes 3? true
+[NOTIFICATION DEBUG] Subscription 3-20251101124327369859 matches create event for type 4
+[NOTIFICATION DEBUG] Sending notification for all types
+[NOTIFICATION DEBUG] Sending HTTP notification to: http://10.2.16.116:8000/notify/listener
+[NOTIFICATION DEBUG] Notification data: {
+  "m2m:sgn": {
+    "nev": {
+      "rep": {
+        "m2m:cin": {
+          "ty": 4,
+          "et": "20261101T132153",
+          "ct": "20251101T132153",
+          "lt": "20251101T132153",
+          "ri": "3-20251101132153531536",
+          "rn": "cin-LCKvfL9nZk",
+          "pi": "3-20251101115308509001",
+          "st": 8,
+          "lbl": [
+            "polluters_count",
+            "bindata",
+            "vehicle_number",
+            "lct",
+            "violations"
+          ],
+          "cs": 100,
+          "con": "['46', 'example', 'example', 'example', 'example']"
+        }
+      },
+      "sur": "Mobius/AE-WM/WM01-0032-0001/Data/sub-1-1",
+      "net": 3
+    }
+  }
+}
+[NOTIFICATION DEBUG] Processing subscription 3-20251101131448799904
+[NOTIFICATION DEBUG] Subscription ENC: {"net":["3"]}
+[NOTIFICATION DEBUG] Event type: create
+[NOTIFICATION DEBUG] Net array (converted): [ 3 ]
+[NOTIFICATION DEBUG] Net includes 3? true
+[NOTIFICATION DEBUG] Subscription 3-20251101131448799904 matches create event for type 4
+[NOTIFICATION DEBUG] Sending notification for all types
+[NOTIFICATION DEBUG] Sending HTTP notification to: http://localhost:8888/notify
+[NOTIFICATION DEBUG] Notification data: {
+  "m2m:sgn": {
+    "nev": {
+      "rep": {
+        "m2m:cin": {
+          "ty": 4,
+          "et": "20261101T132153",
+          "ct": "20251101T132153",
+          "lt": "20251101T132153",
+          "ri": "3-20251101132153531536",
+          "rn": "cin-LCKvfL9nZk",
+          "pi": "3-20251101115308509001",
+          "st": 8,
+          "lbl": [
+            "polluters_count",
+            "bindata",
+            "vehicle_number",
+            "lct",
+            "violations"
+          ],
+          "cs": 100,
+          "con": "['46', 'example', 'example', 'example', 'example']"
+        }
+      },
+      "sur": "Mobius/AE-WM/WM01-0032-0001/Data/test-sub-notification",
+      "net": 3
+    }
+  }
+}
+sur: Mobius/AE-WM/WM01-0032-0001/Data/test-sub-notification, target unreachable: http://localhost:8888/notify (no response)
+sur: Mobius/AE-WM/WM01-0032-0001/Data/sub-1-0, target unreachable: http://10.2.16.116:8610/notify/listener (status: 500)
+
+received message from notification target:
+{
+  "message": "Notification processed successfully"
+}
+
+request primitive: 
+ {
+  "fc": {},
+  "to": "Mobius/AE-WM/WM01-0032-0001/Data",
+  "fr": "SOriginAE-WM",
+  "rqi": "12345",
+  "op": 1,
+  "ty": 4,
+  "rcn": 1,
+  "pc": {
+    "m2m:cin": {
+      "con": "['46', 'example', 'example', 'example', 'example']",
+      "lbl": [
+        "polluters_count",
+        "bindata",
+        "vehicle_number",
+        "lct",
+        "violations"
+      ]
+    }
+  }
+}
+comparing internally kept creator (SOriginAE-WM) and originator (SOriginAE-WM)
+
+[NOTIFICATION DEBUG] Event: create
+[NOTIFICATION DEBUG] Looking for subscriptions under PI: 3-20251101115308509001
+[NOTIFICATION DEBUG] Resource RI: 3-20251101115308509001, PI: undefined
+
+response primitive: 
+ {
+  "rqi": "12345",
+  "rvi": "4",
+  "pc": {
+    "m2m:cin": {
+      "ty": 4,
+      "et": "20261101T132155",
+      "ct": "20251101T132155",
+      "lt": "20251101T132155",
+      "ri": "3-20251101132155683210",
+      "rn": "cin-Amk72GIMXS",
+      "pi": "3-20251101115308509001",
+      "st": 9,
+      "lbl": [
+        "polluters_count",
+        "bindata",
+        "vehicle_number",
+        "lct",
+        "violations"
+      ],
+      "cs": 100,
+      "con": "['46', 'example', 'example', 'example', 'example']"
+    }
+  },
+  "rsc": 2001
+}
+[NOTIFICATION DEBUG] Found 3 subscriptions
+[NOTIFICATION DEBUG] Processing subscription 3-20251101115308615565
+[NOTIFICATION DEBUG] Subscription ENC: {"net":["3"]}
+[NOTIFICATION DEBUG] Event type: create
+[NOTIFICATION DEBUG] Net array (converted): [ 3 ]
+[NOTIFICATION DEBUG] Net includes 3? true
+[NOTIFICATION DEBUG] Subscription 3-20251101115308615565 matches create event for type 4
+[NOTIFICATION DEBUG] Sending notification for all types
+[NOTIFICATION DEBUG] Sending HTTP notification to: http://10.2.16.116:8610/notify/listener
+[NOTIFICATION DEBUG] Notification data: {
+  "m2m:sgn": {
+    "nev": {
+      "rep": {
+        "m2m:cin": {
+          "ty": 4,
+          "et": "20261101T132155",
+          "ct": "20251101T132155",
+          "lt": "20251101T132155",
+          "ri": "3-20251101132155683210",
+          "rn": "cin-Amk72GIMXS",
+          "pi": "3-20251101115308509001",
+          "st": 9,
+          "lbl": [
+            "polluters_count",
+            "bindata",
+            "vehicle_number",
+            "lct",
+            "violations"
+          ],
+          "cs": 100,
+          "con": "['46', 'example', 'example', 'example', 'example']"
+        }
+      },
+      "sur": "Mobius/AE-WM/WM01-0032-0001/Data/sub-1-0",
+      "net": 3
+    }
+  }
+}
+[NOTIFICATION DEBUG] Processing subscription 3-20251101124327369859
+[NOTIFICATION DEBUG] Subscription ENC: {"net":["3"]}
+[NOTIFICATION DEBUG] Event type: create
+[NOTIFICATION DEBUG] Net array (converted): [ 3 ]
+[NOTIFICATION DEBUG] Net includes 3? true
+[NOTIFICATION DEBUG] Subscription 3-20251101124327369859 matches create event for type 4
+[NOTIFICATION DEBUG] Sending notification for all types
+[NOTIFICATION DEBUG] Sending HTTP notification to: http://10.2.16.116:8000/notify/listener
+[NOTIFICATION DEBUG] Notification data: {
+  "m2m:sgn": {
+    "nev": {
+      "rep": {
+        "m2m:cin": {
+          "ty": 4,
+          "et": "20261101T132155",
+          "ct": "20251101T132155",
+          "lt": "20251101T132155",
+          "ri": "3-20251101132155683210",
+          "rn": "cin-Amk72GIMXS",
+          "pi": "3-20251101115308509001",
+          "st": 9,
+          "lbl": [
+            "polluters_count",
+            "bindata",
+            "vehicle_number",
+            "lct",
+            "violations"
+          ],
+          "cs": 100,
+          "con": "['46', 'example', 'example', 'example', 'example']"
+        }
+      },
+      "sur": "Mobius/AE-WM/WM01-0032-0001/Data/sub-1-1",
+      "net": 3
+    }
+  }
+}
+[NOTIFICATION DEBUG] Processing subscription 3-20251101131448799904
+[NOTIFICATION DEBUG] Subscription ENC: {"net":["3"]}
+[NOTIFICATION DEBUG] Event type: create
+[NOTIFICATION DEBUG] Net array (converted): [ 3 ]
+[NOTIFICATION DEBUG] Net includes 3? true
+[NOTIFICATION DEBUG] Subscription 3-20251101131448799904 matches create event for type 4
+[NOTIFICATION DEBUG] Sending notification for all types
+[NOTIFICATION DEBUG] Sending HTTP notification to: http://localhost:8888/notify
+[NOTIFICATION DEBUG] Notification data: {
+  "m2m:sgn": {
+    "nev": {
+      "rep": {
+        "m2m:cin": {
+          "ty": 4,
+          "et": "20261101T132155",
+          "ct": "20251101T132155",
+          "lt": "20251101T132155",
+          "ri": "3-20251101132155683210",
+          "rn": "cin-Amk72GIMXS",
+          "pi": "3-20251101115308509001",
+          "st": 9,
+          "lbl": [
+            "polluters_count",
+            "bindata",
+            "vehicle_number",
+            "lct",
+            "violations"
+          ],
+          "cs": 100,
+          "con": "['46', 'example', 'example', 'example', 'example']"
+        }
+      },
+      "sur": "Mobius/AE-WM/WM01-0032-0001/Data/test-sub-notification",
+      "net": 3
+    }
+  }
+}
+sur: Mobius/AE-WM/WM01-0032-0001/Data/test-sub-notification, target unreachable: http://localhost:8888/notify (no response)
+sur: Mobius/AE-WM/WM01-0032-0001/Data/sub-1-0, target unreachable: http://10.2.16.116:8610/notify/listener (status: 500)
+
+received message from notification target:
+{
+  "message": "Notification processed successfully"
+}
+
+request primitive: 
+ {
+  "fc": {},
+  "to": "Mobius/AE-WM/WM01-0032-0001/Data",
+  "fr": "SOriginAE-WM",
+  "rqi": "12345",
+  "op": 1,
+  "ty": 4,
+  "rcn": 1,
+  "pc": {
+    "m2m:cin": {
+      "con": "['46', 'example', 'example', 'example', 'example']",
+      "lbl": [
+        "polluters_count",
+        "bindata",
+        "vehicle_number",
+        "lct",
+        "violations"
+      ]
+    }
+  }
+}
+comparing internally kept creator (SOriginAE-WM) and originator (SOriginAE-WM)
+
+[NOTIFICATION DEBUG] Event: create
+[NOTIFICATION DEBUG] Looking for subscriptions under PI: 3-20251101115308509001
+[NOTIFICATION DEBUG] Resource RI: 3-20251101115308509001, PI: undefined
+
+response primitive: 
+ {
+  "rqi": "12345",
+  "rvi": "4",
+  "pc": {
+    "m2m:cin": {
+      "ty": 4,
+      "et": "20261101T132206",
+      "ct": "20251101T132206",
+      "lt": "20251101T132206",
+      "ri": "3-20251101132206247486",
+      "rn": "cin-O2pDe9JlI3",
+      "pi": "3-20251101115308509001",
+      "st": 10,
+      "lbl": [
+        "polluters_count",
+        "bindata",
+        "vehicle_number",
+        "lct",
+        "violations"
+      ],
+      "cs": 100,
+      "con": "['46', 'example', 'example', 'example', 'example']"
+    }
+  },
+  "rsc": 2001
+}
+[NOTIFICATION DEBUG] Found 3 subscriptions
+[NOTIFICATION DEBUG] Processing subscription 3-20251101115308615565
+[NOTIFICATION DEBUG] Subscription ENC: {"net":["3"]}
+[NOTIFICATION DEBUG] Event type: create
+[NOTIFICATION DEBUG] Net array (converted): [ 3 ]
+[NOTIFICATION DEBUG] Net includes 3? true
+[NOTIFICATION DEBUG] Subscription 3-20251101115308615565 matches create event for type 4
+[NOTIFICATION DEBUG] Sending notification for all types
+[NOTIFICATION DEBUG] Sending HTTP notification to: http://10.2.16.116:8610/notify/listener
+[NOTIFICATION DEBUG] Notification data: {
+  "m2m:sgn": {
+    "nev": {
+      "rep": {
+        "m2m:cin": {
+          "ty": 4,
+          "et": "20261101T132206",
+          "ct": "20251101T132206",
+          "lt": "20251101T132206",
+          "ri": "3-20251101132206247486",
+          "rn": "cin-O2pDe9JlI3",
+          "pi": "3-20251101115308509001",
+          "st": 10,
+          "lbl": [
+            "polluters_count",
+            "bindata",
+            "vehicle_number",
+            "lct",
+            "violations"
+          ],
+          "cs": 100,
+          "con": "['46', 'example', 'example', 'example', 'example']"
+        }
+      },
+      "sur": "Mobius/AE-WM/WM01-0032-0001/Data/sub-1-0",
+      "net": 3
+    }
+  }
+}
+[NOTIFICATION DEBUG] Processing subscription 3-20251101124327369859
+[NOTIFICATION DEBUG] Subscription ENC: {"net":["3"]}
+[NOTIFICATION DEBUG] Event type: create
+[NOTIFICATION DEBUG] Net array (converted): [ 3 ]
+[NOTIFICATION DEBUG] Net includes 3? true
+[NOTIFICATION DEBUG] Subscription 3-20251101124327369859 matches create event for type 4
+[NOTIFICATION DEBUG] Sending notification for all types
+[NOTIFICATION DEBUG] Sending HTTP notification to: http://10.2.16.116:8000/notify/listener
+[NOTIFICATION DEBUG] Notification data: {
+  "m2m:sgn": {
+    "nev": {
+      "rep": {
+        "m2m:cin": {
+          "ty": 4,
+          "et": "20261101T132206",
+          "ct": "20251101T132206",
+          "lt": "20251101T132206",
+          "ri": "3-20251101132206247486",
+          "rn": "cin-O2pDe9JlI3",
+          "pi": "3-20251101115308509001",
+          "st": 10,
+          "lbl": [
+            "polluters_count",
+            "bindata",
+            "vehicle_number",
+            "lct",
+            "violations"
+          ],
+          "cs": 100,
+          "con": "['46', 'example', 'example', 'example', 'example']"
+        }
+      },
+      "sur": "Mobius/AE-WM/WM01-0032-0001/Data/sub-1-1",
+      "net": 3
+    }
+  }
+}
+[NOTIFICATION DEBUG] Processing subscription 3-20251101131448799904
+[NOTIFICATION DEBUG] Subscription ENC: {"net":["3"]}
+[NOTIFICATION DEBUG] Event type: create
+[NOTIFICATION DEBUG] Net array (converted): [ 3 ]
+[NOTIFICATION DEBUG] Net includes 3? true
+[NOTIFICATION DEBUG] Subscription 3-20251101131448799904 matches create event for type 4
+[NOTIFICATION DEBUG] Sending notification for all types
+[NOTIFICATION DEBUG] Sending HTTP notification to: http://localhost:8888/notify
+[NOTIFICATION DEBUG] Notification data: {
+  "m2m:sgn": {
+    "nev": {
+      "rep": {
+        "m2m:cin": {
+          "ty": 4,
+          "et": "20261101T132206",
+          "ct": "20251101T132206",
+          "lt": "20251101T132206",
+          "ri": "3-20251101132206247486",
+          "rn": "cin-O2pDe9JlI3",
+          "pi": "3-20251101115308509001",
+          "st": 10,
+          "lbl": [
+            "polluters_count",
+            "bindata",
+            "vehicle_number",
+            "lct",
+            "violations"
+          ],
+          "cs": 100,
+          "con": "['46', 'example', 'example', 'example', 'example']"
+        }
+      },
+      "sur": "Mobius/AE-WM/WM01-0032-0001/Data/test-sub-notification",
+      "net": 3
+    }
+  }
+}
+sur: Mobius/AE-WM/WM01-0032-0001/Data/test-sub-notification, target unreachable: http://localhost:8888/notify (no response)
+
+received message from notification target:
+{
+  "message": "Notification processed successfully"
+}
+sur: Mobius/AE-WM/WM01-0032-0001/Data/sub-1-0, target unreachable: http://10.2.16.116:8610/notify/listener (status: 500)
+
+request primitive: 
+ {
+  "fc": {},
+  "to": "Mobius/AE-WM/WM01-0032-0001/Data",
+  "fr": "SOriginAE-WM",
+  "rqi": "12345",
+  "op": 1,
+  "ty": 4,
+  "rcn": 1,
+  "pc": {
+    "m2m:cin": {
+      "con": "['46', 'example', 'example', 'example', 'example']",
+      "lbl": [
+        "polluters_count",
+        "bindata",
+        "vehicle_number",
+        "lct",
+        "violations"
+      ]
+    }
+  }
+}
+comparing internally kept creator (SOriginAE-WM) and originator (SOriginAE-WM)
+
+[NOTIFICATION DEBUG] Event: create
+[NOTIFICATION DEBUG] Looking for subscriptions under PI: 3-20251101115308509001
+[NOTIFICATION DEBUG] Resource RI: 3-20251101115308509001, PI: undefined
+
+response primitive: 
+ {
+  "rqi": "12345",
+  "rvi": "4",
+  "pc": {
+    "m2m:cin": {
+      "ty": 4,
+      "et": "20261101T132207",
+      "ct": "20251101T132207",
+      "lt": "20251101T132207",
+      "ri": "3-20251101132207466925",
+      "rn": "cin-tm4Dvt9RT0",
+      "pi": "3-20251101115308509001",
+      "st": 11,
+      "lbl": [
+        "polluters_count",
+        "bindata",
+        "vehicle_number",
+        "lct",
+        "violations"
+      ],
+      "cs": 100,
+      "con": "['46', 'example', 'example', 'example', 'example']"
+    }
+  },
+  "rsc": 2001
+}
+[NOTIFICATION DEBUG] Found 3 subscriptions
+[NOTIFICATION DEBUG] Processing subscription 3-20251101115308615565
+[NOTIFICATION DEBUG] Subscription ENC: {"net":["3"]}
+[NOTIFICATION DEBUG] Event type: create
+[NOTIFICATION DEBUG] Net array (converted): [ 3 ]
+[NOTIFICATION DEBUG] Net includes 3? true
+[NOTIFICATION DEBUG] Subscription 3-20251101115308615565 matches create event for type 4
+[NOTIFICATION DEBUG] Sending notification for all types
+[NOTIFICATION DEBUG] Sending HTTP notification to: http://10.2.16.116:8610/notify/listener
+[NOTIFICATION DEBUG] Notification data: {
+  "m2m:sgn": {
+    "nev": {
+      "rep": {
+        "m2m:cin": {
+          "ty": 4,
+          "et": "20261101T132207",
+          "ct": "20251101T132207",
+          "lt": "20251101T132207",
+          "ri": "3-20251101132207466925",
+          "rn": "cin-tm4Dvt9RT0",
+          "pi": "3-20251101115308509001",
+          "st": 11,
+          "lbl": [
+            "polluters_count",
+            "bindata",
+            "vehicle_number",
+            "lct",
+            "violations"
+          ],
+          "cs": 100,
+          "con": "['46', 'example', 'example', 'example', 'example']"
+        }
+      },
+      "sur": "Mobius/AE-WM/WM01-0032-0001/Data/sub-1-0",
+      "net": 3
+    }
+  }
+}
+[NOTIFICATION DEBUG] Processing subscription 3-20251101124327369859
+[NOTIFICATION DEBUG] Subscription ENC: {"net":["3"]}
+[NOTIFICATION DEBUG] Event type: create
+[NOTIFICATION DEBUG] Net array (converted): [ 3 ]
+[NOTIFICATION DEBUG] Net includes 3? true
+[NOTIFICATION DEBUG] Subscription 3-20251101124327369859 matches create event for type 4
+[NOTIFICATION DEBUG] Sending notification for all types
+[NOTIFICATION DEBUG] Sending HTTP notification to: http://10.2.16.116:8000/notify/listener
+[NOTIFICATION DEBUG] Notification data: {
+  "m2m:sgn": {
+    "nev": {
+      "rep": {
+        "m2m:cin": {
+          "ty": 4,
+          "et": "20261101T132207",
+          "ct": "20251101T132207",
+          "lt": "20251101T132207",
+          "ri": "3-20251101132207466925",
+          "rn": "cin-tm4Dvt9RT0",
+          "pi": "3-20251101115308509001",
+          "st": 11,
+          "lbl": [
+            "polluters_count",
+            "bindata",
+            "vehicle_number",
+            "lct",
+            "violations"
+          ],
+          "cs": 100,
+          "con": "['46', 'example', 'example', 'example', 'example']"
+        }
+      },
+      "sur": "Mobius/AE-WM/WM01-0032-0001/Data/sub-1-1",
+      "net": 3
+    }
+  }
+}
+[NOTIFICATION DEBUG] Processing subscription 3-20251101131448799904
+[NOTIFICATION DEBUG] Subscription ENC: {"net":["3"]}
+[NOTIFICATION DEBUG] Event type: create
+[NOTIFICATION DEBUG] Net array (converted): [ 3 ]
+[NOTIFICATION DEBUG] Net includes 3? true
+[NOTIFICATION DEBUG] Subscription 3-20251101131448799904 matches create event for type 4
+[NOTIFICATION DEBUG] Sending notification for all types
+[NOTIFICATION DEBUG] Sending HTTP notification to: http://localhost:8888/notify
+[NOTIFICATION DEBUG] Notification data: {
+  "m2m:sgn": {
+    "nev": {
+      "rep": {
+        "m2m:cin": {
+          "ty": 4,
+          "et": "20261101T132207",
+          "ct": "20251101T132207",
+          "lt": "20251101T132207",
+          "ri": "3-20251101132207466925",
+          "rn": "cin-tm4Dvt9RT0",
+          "pi": "3-20251101115308509001",
+          "st": 11,
+          "lbl": [
+            "polluters_count",
+            "bindata",
+            "vehicle_number",
+            "lct",
+            "violations"
+          ],
+          "cs": 100,
+          "con": "['46', 'example', 'example', 'example', 'example']"
+        }
+      },
+      "sur": "Mobius/AE-WM/WM01-0032-0001/Data/test-sub-notification",
+      "net": 3
+    }
+  }
+}
+sur: Mobius/AE-WM/WM01-0032-0001/Data/test-sub-notification, target unreachable: http://localhost:8888/notify (no response)
+sur: Mobius/AE-WM/WM01-0032-0001/Data/sub-1-0, target unreachable: http://10.2.16.116:8610/notify/listener (status: 500)
+
+received message from notification target:
+{
+  "message": "Notification processed successfully"
+}
+
+request primitive: 
+ {
+  "fc": {},
+  "to": "Mobius/AE-WM/WM01-0032-0001/Data",
+  "fr": "SOriginAE-WM",
+  "rqi": "12345",
+  "op": 1,
+  "ty": 4,
+  "rcn": 1,
+  "pc": {
+    "m2m:cin": {
+      "con": "['46', 'example', 'example', 'example', 'example']",
+      "lbl": [
+        "polluters_count",
+        "bindata",
+        "vehicle_number",
+        "lct",
+        "violations"
+      ]
+    }
+  }
+}
+comparing internally kept creator (SOriginAE-WM) and originator (SOriginAE-WM)
+
+[NOTIFICATION DEBUG] Event: create
+[NOTIFICATION DEBUG] Looking for subscriptions under PI: 3-20251101115308509001
+[NOTIFICATION DEBUG] Resource RI: 3-20251101115308509001, PI: undefined
+
+response primitive: 
+ {
+  "rqi": "12345",
+  "rvi": "4",
+  "pc": {
+    "m2m:cin": {
+      "ty": 4,
+      "et": "20261101T132208",
+      "ct": "20251101T132208",
+      "lt": "20251101T132208",
+      "ri": "3-20251101132208882464",
+      "rn": "cin-j4tgFHLuZh",
+      "pi": "3-20251101115308509001",
+      "st": 12,
+      "lbl": [
+        "polluters_count",
+        "bindata",
+        "vehicle_number",
+        "lct",
+        "violations"
+      ],
+      "cs": 100,
+      "con": "['46', 'example', 'example', 'example', 'example']"
+    }
+  },
+  "rsc": 2001
+}
+[NOTIFICATION DEBUG] Found 3 subscriptions
+[NOTIFICATION DEBUG] Processing subscription 3-20251101115308615565
+[NOTIFICATION DEBUG] Subscription ENC: {"net":["3"]}
+[NOTIFICATION DEBUG] Event type: create
+[NOTIFICATION DEBUG] Net array (converted): [ 3 ]
+[NOTIFICATION DEBUG] Net includes 3? true
+[NOTIFICATION DEBUG] Subscription 3-20251101115308615565 matches create event for type 4
+[NOTIFICATION DEBUG] Sending notification for all types
+[NOTIFICATION DEBUG] Sending HTTP notification to: http://10.2.16.116:8610/notify/listener
+[NOTIFICATION DEBUG] Notification data: {
+  "m2m:sgn": {
+    "nev": {
+      "rep": {
+        "m2m:cin": {
+          "ty": 4,
+          "et": "20261101T132208",
+          "ct": "20251101T132208",
+          "lt": "20251101T132208",
+          "ri": "3-20251101132208882464",
+          "rn": "cin-j4tgFHLuZh",
+          "pi": "3-20251101115308509001",
+          "st": 12,
+          "lbl": [
+            "polluters_count",
+            "bindata",
+            "vehicle_number",
+            "lct",
+            "violations"
+          ],
+          "cs": 100,
+          "con": "['46', 'example', 'example', 'example', 'example']"
+        }
+      },
+      "sur": "Mobius/AE-WM/WM01-0032-0001/Data/sub-1-0",
+      "net": 3
+    }
+  }
+}
+[NOTIFICATION DEBUG] Processing subscription 3-20251101124327369859
+[NOTIFICATION DEBUG] Subscription ENC: {"net":["3"]}
+[NOTIFICATION DEBUG] Event type: create
+[NOTIFICATION DEBUG] Net array (converted): [ 3 ]
+[NOTIFICATION DEBUG] Net includes 3? true
+[NOTIFICATION DEBUG] Subscription 3-20251101124327369859 matches create event for type 4
+[NOTIFICATION DEBUG] Sending notification for all types
+[NOTIFICATION DEBUG] Sending HTTP notification to: http://10.2.16.116:8000/notify/listener
+[NOTIFICATION DEBUG] Notification data: {
+  "m2m:sgn": {
+    "nev": {
+      "rep": {
+        "m2m:cin": {
+          "ty": 4,
+          "et": "20261101T132208",
+          "ct": "20251101T132208",
+          "lt": "20251101T132208",
+          "ri": "3-20251101132208882464",
+          "rn": "cin-j4tgFHLuZh",
+          "pi": "3-20251101115308509001",
+          "st": 12,
+          "lbl": [
+            "polluters_count",
+            "bindata",
+            "vehicle_number",
+            "lct",
+            "violations"
+          ],
+          "cs": 100,
+          "con": "['46', 'example', 'example', 'example', 'example']"
+        }
+      },
+      "sur": "Mobius/AE-WM/WM01-0032-0001/Data/sub-1-1",
+      "net": 3
+    }
+  }
+}
+[NOTIFICATION DEBUG] Processing subscription 3-20251101131448799904
+[NOTIFICATION DEBUG] Subscription ENC: {"net":["3"]}
+[NOTIFICATION DEBUG] Event type: create
+[NOTIFICATION DEBUG] Net array (converted): [ 3 ]
+[NOTIFICATION DEBUG] Net includes 3? true
+[NOTIFICATION DEBUG] Subscription 3-20251101131448799904 matches create event for type 4
+[NOTIFICATION DEBUG] Sending notification for all types
+[NOTIFICATION DEBUG] Sending HTTP notification to: http://localhost:8888/notify
+[NOTIFICATION DEBUG] Notification data: {
+  "m2m:sgn": {
+    "nev": {
+      "rep": {
+        "m2m:cin": {
+          "ty": 4,
+          "et": "20261101T132208",
+          "ct": "20251101T132208",
+          "lt": "20251101T132208",
+          "ri": "3-20251101132208882464",
+          "rn": "cin-j4tgFHLuZh",
+          "pi": "3-20251101115308509001",
+          "st": 12,
+          "lbl": [
+            "polluters_count",
+            "bindata",
+            "vehicle_number",
+            "lct",
+            "violations"
+          ],
+          "cs": 100,
+          "con": "['46', 'example', 'example', 'example', 'example']"
+        }
+      },
+      "sur": "Mobius/AE-WM/WM01-0032-0001/Data/test-sub-notification",
+      "net": 3
+    }
+  }
+}
+sur: Mobius/AE-WM/WM01-0032-0001/Data/test-sub-notification, target unreachable: http://localhost:8888/notify (no response)
+sur: Mobius/AE-WM/WM01-0032-0001/Data/sub-1-0, target unreachable: http://10.2.16.116:8610/notify/listener (status: 500)
+
+received message from notification target:
+{
+  "message": "Notification processed successfully"
+}
+
+request primitive: 
+ {
+  "fc": {},
+  "to": "Mobius/AE-WM/WM01-0032-0001",
+  "fr": "SOrigin",
+  "rqi": "12345",
+  "op": 2,
+  "pc": {}
+}
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+
+request primitive: 
+ {
+  "fc": {},
+  "to": "Mobius/AE-WM/WM01-0032-0001",
+  "fr": "SOrigin",
+  "rqi": "12345",
+  "op": 2,
+  "rcn": 4,
+  "pc": {}
+}
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM/WM01-0032-0001) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM/WM01-0032-0001) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM/WM01-0032-0001) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM/WM01-0032-0001) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOrigin) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOrigin) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+
+request primitive: 
+ {
+  "fc": {},
+  "to": "Mobius/AE-WM/WM01-0032-0001",
+  "fr": "SOrigin",
+  "rqi": "12345",
+  "op": 2,
+  "pc": {}
+}
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+
+request primitive: 
+ {
+  "fc": {},
+  "to": "Mobius/AE-WM/WM01-0032-0001",
+  "fr": "SOrigin",
+  "rqi": "12345",
+  "op": 2,
+  "rcn": 4,
+  "pc": {}
+}
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM/WM01-0032-0001) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM/WM01-0032-0001) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM/WM01-0032-0001) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM/WM01-0032-0001) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOrigin) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOrigin) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+
+request primitive: 
+ {
+  "fc": {},
+  "to": "Mobius/AE-WM/WM01-0032-0001/Data",
+  "fr": "SOrigin",
+  "rqi": "12345",
+  "op": 2,
+  "rcn": 4,
+  "pc": {}
+}
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM/WM01-0032-0001) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOrigin) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOrigin) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+
+request primitive: 
+ {
+  "fc": {},
+  "to": "Mobius/AE-WM/WM01-0032-0001/Data",
+  "fr": "SOrigin",
+  "rqi": "12345",
+  "op": 2,
+  "rcn": 4,
+  "pc": {}
+}
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+
+request primitive: 
+ {
+  "fc": {},
+  "to": "Mobius/AE-WM/WM01-0032-0001/Data/la",
+  "fr": "SOrigin",
+  "rqi": "12345",
+  "op": 2,
+  "pc": {}
+}
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM/WM01-0032-0001) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOrigin) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SOrigin) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+comparing internally kept creator (SM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+
+request primitive: 
+ {
+  "fc": {},
+  "to": "Mobius/AE-WM/WM01-0032-0001/Data/la",
+  "fr": "SOrigin",
+  "rqi": "12345",
+  "op": 2,
+  "pc": {}
+}
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+
+request primitive: 
+ {
+  "fc": {},
+  "to": "Mobius/AE-WM/WM01-0032-0001/Data/la",
+  "fr": "SOrigin",
+  "rqi": "12345",
+  "op": 2,
+  "pc": {}
+}
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin
+
+request primitive: 
+ {
+  "fc": {},
+  "to": "Mobius/AE-WM/WM01-0032-0001/Data/la",
+  "fr": "SOrigin",
+  "rqi": "12345",
+  "op": 2,
+  "pc": {}
+}
+comparing internally kept creator (SOriginAE-WM) and originator (SOrigin)
+Admin access granted for originator: SOrigin

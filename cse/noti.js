@@ -48,15 +48,21 @@ async function check_and_send_noti(req_prim, resp_prim, event_type) {
             console.log(`[NOTIFICATION DEBUG] Processing subscription ${sub_res.ri}`);
             console.log(`[NOTIFICATION DEBUG] Subscription ENC:`, JSON.stringify(sub_res.enc));
             console.log(`[NOTIFICATION DEBUG] Event type: ${event_type}`);
-            console.log(`[NOTIFICATION DEBUG] Net includes 3?`, sub_res.enc.net.includes(3));
+            
+            // Convert net array to numbers if they are strings (fix type mismatch)
+            const netAsNumbers = sub_res.enc.net.map(n => typeof n === 'string' ? parseInt(n) : n);
+            console.log(`[NOTIFICATION DEBUG] Net array (converted):`, netAsNumbers);
+            console.log(`[NOTIFICATION DEBUG] Net includes 3?`, netAsNumbers.includes(3));
 
-            if (sub_res.enc.net.includes(3) == true && "create" == event_type) {
+            if (netAsNumbers.includes(3) == true && "create" == event_type) {
                 // net 3: create
                 let this_ty = req_prim.ty;
                 console.log(`[NOTIFICATION DEBUG] Subscription ${sub_res.ri} matches create event for type ${this_ty}`);
                 // console.log('\nsub_res for the creation target: ', sub_res);
                 if (sub_res.enc.chty) {
-                    if (sub_res.enc.chty.includes(this_ty)) {
+                    // Convert chty to numbers as well
+                    const chtyAsNumbers = sub_res.enc.chty.map(t => typeof t === 'string' ? parseInt(t) : t);
+                    if (chtyAsNumbers.includes(this_ty)) {
                         console.log(`[NOTIFICATION DEBUG] Sending notification for specific type match`);
                         send_a_noti(sub_res, resp_prim.pc, 3);
                     }
@@ -64,7 +70,7 @@ async function check_and_send_noti(req_prim, resp_prim, event_type) {
                     console.log(`[NOTIFICATION DEBUG] Sending notification for all types`);
                     send_a_noti(sub_res, resp_prim.pc, 3);
                 }
-            } else if (sub_res.enc.net.includes(1) == true && "update" == event_type) {
+            } else if (netAsNumbers.includes(1) == true && "update" == event_type) {
                 // net 1: update
                 if (2 == sub_res.nct) {
                     // notificationContentType 2: modified attributes
